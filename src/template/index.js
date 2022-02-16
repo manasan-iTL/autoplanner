@@ -1,1 +1,5 @@
 export {default as Signup} from './Signup'
+export {default as IndexList} from './IndexList'
+export {default as Detail} from './Detail'
+export {default as EditBook} from './EditBook'
+export {default as ListTasks} from './ListTasks'

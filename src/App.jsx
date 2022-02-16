@@ -1,13 +1,13 @@
 import {Header} from "./components/Header"
 import {Footer} from "./components/Footer"
-import {Signup} from "./template/index"
+import  Router from "./Router"
 
 function App() {
   return (
     <div >
       <Header text="新規登録"/>
-      <main>
-        <Signup />
+      <main className="container mx-auto">
+        <Router />
       </main>
       <Footer />
     </div>
