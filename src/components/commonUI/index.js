@@ -1,5 +1,6 @@
 export {default as Thumbnail} from './Thumbnail'
 export {default as LoginBotton} from './LoginBotton'
 export {default as Card} from './Card'
-export {default as CommonBotton} from './CommonButton'
+export {default as CommonButton} from './CommonButton'
 export {default as Input} from './Input'
+export {default as SearchInput} from './SearchInput'

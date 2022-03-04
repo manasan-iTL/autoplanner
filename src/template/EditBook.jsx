@@ -1,40 +1,40 @@
-import { Input } from "../components/commonUI"
+import { Input, SearchInput } from "../components/commonUI"
 
 const EditBook = () => {
     return (
-        <div>
-            <h2>参考書登録画面</h2>
-            <Input 
+        <div className="w-4/5 mx-auto flex flex-col items-center bg-gray-100">
+            <h2 className="font-bold text-2xl mt-10 mb-10">参考書登録画面</h2>
+            <SearchInput
                 type="text"
                 placefolderText = "参考書を入力してください"
-                disabled = {false}
+                text = "検索"
              />
             <Input 
                 type="text"
                 placefolderText = "参考書名"
                 value = "速読英単語　上級"
-                disabled = {true}
+                text = "変更"
              />
             <Input 
                 type="number"
                 placefolderText = "ページ数"
                 value = {150}
-                disabled = {true}
+                text = "変更"
              />
             <Input 
                 type="date"
                 placefolderText = "開始日"
-                disabled = {false}
+                text = "変更"
              />
             <Input 
                 type="date"
                 placefolderText = "終了日"
-                disabled = {false}
+                text = "変更"
              />
             <Input 
                 type="number"
                 placefolderText = "1日のタスク"
-                disabled = {false}
+                text = "変更"
              />
         </div>
     )
