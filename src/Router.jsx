@@ -1,9 +1,8 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Detail, EditBook, IndexList, ListTasks, Signup } from "./template";
 
 const Router = () => {
     return (
-        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Signup />} />
                 <Route path="/home" element={<IndexList />} />
@@ -11,7 +10,6 @@ const Router = () => {
                 <Route path="/edit" element={<EditBook />} />
                 <Route path="/tasks" element={<ListTasks />} />
             </Routes>
-        </BrowserRouter>
     )
 }
 

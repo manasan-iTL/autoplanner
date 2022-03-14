@@ -1,13 +1,19 @@
 import { Input, SearchInput } from "../components/commonUI"
 
 const EditBook = () => {
+
+    const searchBooks = () => {
+        console.log("search books")
+    }
     return (
-        <div className="w-4/5 mx-auto flex flex-col items-center bg-gray-100">
+        <div className="w-4/5 mx-auto 
+        flex flex-col items-center bg-gray-100">
             <h2 className="font-bold text-2xl mt-10 mb-10">参考書登録画面</h2>
             <SearchInput
                 type="text"
                 placefolderText = "参考書を入力してください"
                 text = "検索"
+                onClick = {searchBooks}
              />
             <Input 
                 type="text"

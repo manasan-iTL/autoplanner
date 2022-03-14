@@ -21,7 +21,7 @@ const SearchInput = (props) => {
                 onFocus = {CheckFocus}
                 onBlur = {CheckFocus}
             />
-            <CommonButton text = {props.text}/>
+            <CommonButton text = {props.text} onClick={props.onClick} />
         </div>
     </div>
     )

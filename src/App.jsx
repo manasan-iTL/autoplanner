@@ -6,8 +6,8 @@ import { AuthProvider } from "./context/AuthContext";
 function App() {
   return (
     <div >
-      <Header text="新規登録"/>
       <AuthProvider>
+        <Header text="新規登録"/>
         <main className="container mx-auto">
           <Router />
         </main>
