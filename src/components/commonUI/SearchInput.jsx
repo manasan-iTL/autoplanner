@@ -20,6 +20,7 @@ const SearchInput = (props) => {
                 value = {props.value}
                 onFocus = {CheckFocus}
                 onBlur = {CheckFocus}
+                onChange = {props.onChange}
             />
             <CommonButton text = {props.text} onClick={props.onClick} />
         </div>

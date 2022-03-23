@@ -1,10 +1,24 @@
-import { Input, SearchInput } from "../components/commonUI"
+import { useState } from "react";
+import { Input, SearchArea, SearchInput } from "../components/commonUI"
+import { searchBook } from "../operations"
+
 
 const EditBook = () => {
+    const [keyword, setKeyword] = useState("")
+    const [books, setBooks] = useState([])
 
-    const searchBooks = () => {
-        console.log("search books")
+    const chageKeyword = (e) => {
+        setKeyword(e.target.value)
     }
+    const changeBooks = (searchKeyword) => {
+        const res = searchBook(searchKeyword)
+        res.then((res) => {
+            console.log(res)
+            setBooks(...books, res)
+            console.log(books)
+        })
+    };
+
     return (
         <div className="w-4/5 mx-auto 
         flex flex-col items-center bg-gray-100">
@@ -13,8 +27,11 @@ const EditBook = () => {
                 type="text"
                 placefolderText = "参考書を入力してください"
                 text = "検索"
-                onClick = {searchBooks}
+                value = {keyword}
+                onClick = {() => changeBooks(keyword)}
+                onChange = {chageKeyword}
              />
+            <SearchArea items = {books} />
             <Input 
                 type="text"
                 placefolderText = "参考書名"
@@ -42,6 +59,9 @@ const EditBook = () => {
                 placefolderText = "1日のタスク"
                 text = "変更"
              />
+             { books.length > 0 && ( books.map(book => 
+                     <Input key={book.id} text={book.title} />
+             ))}
         </div>
     )
 }
