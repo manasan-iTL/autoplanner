@@ -6,15 +6,19 @@ import { searchBook } from "../operations"
 const EditBook = () => {
     const [keyword, setKeyword] = useState("")
     const [books, setBooks] = useState([])
+    // const [selectBook, setSelectBook] = useState("")
 
     const chageKeyword = (e) => {
         setKeyword(e.target.value)
+    }
+    const changeSelectBook = (e) => {
+        console.log(e.target.value)
     }
     const changeBooks = (searchKeyword) => {
         const res = searchBook(searchKeyword)
         res.then((res) => {
             console.log(res)
-            setBooks(...books, res)
+            setBooks(res)
             console.log(books)
         })
     };
@@ -31,7 +35,7 @@ const EditBook = () => {
                 onClick = {() => changeBooks(keyword)}
                 onChange = {chageKeyword}
              />
-            <SearchArea items = {books} />
+            <SearchArea items = {books}  onChange={changeSelectBook}/>
             <Input 
                 type="text"
                 placefolderText = "参考書名"

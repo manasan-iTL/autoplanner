@@ -12,6 +12,7 @@ const Header = (props) => {
     const signout = () => {
         signOut(auth).then(() =>{
             console.log("logout")
+            
             navigate('/')
         }).catch((error) => {
             console.log("Error")
